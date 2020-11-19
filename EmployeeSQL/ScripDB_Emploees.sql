@@ -1,8 +1,6 @@
 -- In practice to drop tables while testing
 DROP TABLE IF EXISTS "Employees" CASCADE;
-
 DROP TABLE IF EXISTS "Department" CASCADE;
-
 DROP TABLE IF EXISTS "Department_Employees";
 DROP TABLE IF EXISTS "Department_Manager";
 DROP TABLE IF EXISTS "Salaries";
@@ -10,7 +8,7 @@ DROP TABLE IF EXISTS "Titles";
 
 
 -- Create the tables for the data (six cvs files)
---Table for 
+--Table for file 'employees.csv'
 CREATE TABLE "Employees" (
     "Employee_Id" int   NOT NULL,
     "birth_date" date   NOT NULL,
@@ -23,6 +21,7 @@ CREATE TABLE "Employees" (
      )
 );
 
+--Table for file 'departments.csv'
 CREATE TABLE "Department" (
     "Department_Id" varchar(4)   NOT NULL,
     "department_name" varchar(100)   NOT NULL,
@@ -31,6 +30,7 @@ CREATE TABLE "Department" (
      )
 );
 
+--Table for file 'dep_emp.csv'
 CREATE TABLE "Department_Employees" (
     "Employee_Id" int   NOT NULL,
     "Department_Id" varchar(4)   NOT NULL,
@@ -38,6 +38,7 @@ CREATE TABLE "Department_Employees" (
     "to_date" date   NOT NULL
 );
 
+--Table for file 'dep_manager.csv'
 CREATE TABLE "Department_Manager" (
     "Department_Id" varchar(4)   NOT NULL,
 	"Employee_Id" int   NOT NULL,
@@ -45,6 +46,7 @@ CREATE TABLE "Department_Manager" (
     "to_date" date   NOT NULL
 );
 
+--Table for file 'salaries.csv'
 CREATE TABLE "Salaries" (
     "Employee_Id" int   NOT NULL,
     "Salary" money   NOT NULL,
@@ -52,6 +54,7 @@ CREATE TABLE "Salaries" (
     "to_date" date   NOT NULL
 );
 
+--Table for file 'titles.csv'
 CREATE TABLE "Titles" (
     "Employee_Id" int   NOT NULL,
     "title" varchar(100)   NOT NULL,
