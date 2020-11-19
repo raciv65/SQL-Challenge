@@ -49,7 +49,7 @@ CREATE TABLE Department_Manager (
 --Table for file 'salaries.csv'
 CREATE TABLE Salaries (
     Employee_Id int   NOT NULL,
-    Salary money   NOT NULL,
+    Salary int   NOT NULL,
     from_date date   NOT NULL,
     to_date date   NOT NULL
 );
@@ -186,8 +186,17 @@ FROM  Employees
 GROUP BY last_name
 ORDER BY COUNT(last_name) DESC;
 
+--Query to bonus part
 
--- Epilogo Employer_number='499942'
+SELECT
+	Titles.title,
+	ROUND(AVG(Salaries.Salary),2) as Averange
+FROM Titles
+INNER JOIN Salaries ON
+Titles.Employee_Id = Salaries.Employee_Id
+GROUP BY Titles.title;
+
+-- Epilogeue Employer_number='499942'
 SELECT 
 	Department_Employees.Employee_Id,
 	Employees.last_name,
@@ -204,4 +213,6 @@ Department_Employees.Employee_Id=Employees.Employee_Id
 INNER JOIN Titles ON
 Department_Employees.Employee_Id=Titles.Employee_Id
 WHERE Employees.Employee_Id='499942';
+
+
 
