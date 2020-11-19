@@ -2,8 +2,10 @@
 .Rhistory
 .Rapp.history
 
+
 # Session Data files
 .RData
+.py
 
 # User-specific files
 .Ruserdata
