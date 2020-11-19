@@ -49,7 +49,7 @@ CREATE TABLE Department_Manager (
 --Table for file 'salaries.csv'
 CREATE TABLE Salaries (
     Employee_Id int   NOT NULL,
-    Salary money   NOT NULL,
+    Salary int   NOT NULL,
     from_date date   NOT NULL,
     to_date date   NOT NULL
 );
