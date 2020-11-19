@@ -62,6 +62,7 @@ CREATE TABLE "Titles" (
     "to_date" date   NOT NULL
 );
 
+-- Creating forent key  to the following tables (principal key are "Employee_Id" and "Department_Id")
 ALTER TABLE "Department_Employees" ADD CONSTRAINT "fk_Department_Employees_Employee_Id" FOREIGN KEY("Employee_Id")
 REFERENCES "Employees" ("Employee_Id");
 
